@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #4CAF50;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: #333;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .profile:hover + .dropdown .dropdown-content {
+            display: block;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Logo</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <div class="profile">
+            <div class="dropdown">
+                <img src="https://via.placeholder.com/40x40" alt="Profile Picture">
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+            <a href="#">Profile</a>
+        </div>
+    </nav>
+    <div class="container">
+        <form>
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -6,12 +6,9 @@ const err = require("./src/middleware/errhandler")
 const app = express();
 
 const authroutes = require("./src/routes/auth");
-const memberroutes = require("./src/routes/api/members");
-const queryroutes = require("./src/routes/query");
-const asyncroutes = require("./src/routes/async");
+const prodroutes = require("./src/routes/test")
 const port2 = 3000;
 
-//connection
 
 // Use connect method to connect to the server
 async function connect() {
@@ -31,11 +28,9 @@ app.use(logger);
 
 app.use(express.json());
 // app.use(express.urlencoded({extended: false}));  for form submitions
-app.use("/api/members", memberroutes);
-app.use("/query", queryroutes);
-app.use("/async", asyncroutes);
 app.use("/auth", authroutes);
-app.use("/static", express.static('public'));
+// app.use("/static", express.static('public'));
+app.use("/getprodinsight", prodroutes);
 
 //err handlers
 app.use(err);
