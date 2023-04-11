@@ -1,12 +1,14 @@
-const express = require("express");
-const mongoose = require("mongoose");
+import express from "express";
+import mongoose from "mongoose";
 
-const logger = require("./src/middleware/logger");
-const err = require("./src/middleware/errhandler")
+import { logger } from "./src/middleware/logger.js";
+import { errhandler } from "./src/middleware/errhandler.js";
+
+import  authroutes  from "./src/routes/auth.js";
+import  prodroutes  from "./src/routes/prod.js";
+
+
 const app = express();
-
-const authroutes = require("./src/routes/auth");
-const prodroutes = require("./src/routes/test")
 const port2 = 3000;
 
 
@@ -27,13 +29,13 @@ connect();
 app.use(logger);
 
 app.use(express.json());
-// app.use(express.urlencoded({extended: false}));  for form submitions
+app.use(express.urlencoded({extended: true}))
 app.use("/auth", authroutes);
 // app.use("/static", express.static('public'));
 app.use("/getprodinsight", prodroutes);
 
 //err handlers
-app.use(err);
+app.use(errhandler);
 
 
 

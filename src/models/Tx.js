@@ -1,5 +1,5 @@
-const { ObjectId } = require('mongodb');
-const mongoose = require('mongoose');
+import {ObjectId} from "mongodb";
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const txSchema = new Schema({
@@ -17,4 +17,4 @@ const txSchema = new Schema({
   });
 
 
-module.exports = mongoose.model('Tx', txSchema);
+export default mongoose.model('Tx', txSchema);

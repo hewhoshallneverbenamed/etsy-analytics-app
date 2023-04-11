@@ -1,21 +1,23 @@
-const { ObjectId } = require('mongodb');
-const mongoose = require('mongoose');
+import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
+// const Shop = require('Shop')
 
 const productSchema = new Schema({
-    name: {
-      type:String,
-      required:true
-    },
+    title:String,
     price:{
         type:Number,
         required:true
     },
+  //   belongstoshop:{
+  //     type:String,
+  //     required:true,
+  //     rel: Shop
+  // },
     similarprods:[ObjectId],
     categories:[String],
     number_reviews: {
-      type:Number,
-      required:true
+      type:Number
     },
     shipping_days:{
         type:Number
@@ -27,4 +29,4 @@ const productSchema = new Schema({
   });
 
 
-module.exports = mongoose.model('Product', productSchema);
+export default mongoose.model('Product', productSchema);

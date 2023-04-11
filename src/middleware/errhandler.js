@@ -4,4 +4,4 @@ const errhandler = (error,req,res,next) => {
     res.send(error.message);
     next();
 }
-module.exports = errhandler;
+export {errhandler};
